@@ -1,0 +1,61 @@
+header {
+	margin: 0;
+	overflow: hidden;
+	background: transparent;
+	font-family: 'IBM Plex Mono', monospace;
+	height: 70px;
+	padding: 10px;
+	display: flex;
+	margin-bottom: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header h1 {
+	font-family: 'JetBrains Mono', monospace;
+}
+
+.headermenu a {
+	padding-top: 10px;
+	padding-right: 10px;
+	color: var(--color-primary);
+}
+
+.headermenu a {
+	font-family: 'JetBrains Mono', monospace;
+}
+
+.headermenu a::before {
+	content: "# "
+}
+
+.headermenu a:after {
+    background-color: var(--color-primary); /* Цвет линии при наведении на нее курсора мыши */
+    display: block;
+    content: "";
+    height: 2px; /* Высота линии */
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+
+.headermenu a:hover:after,
+.headermenu a:focus:after {
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+	header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 70px;
+	}
+
+	header h1 {
+		padding: 0;
+		margin: 0;
+	}
+}

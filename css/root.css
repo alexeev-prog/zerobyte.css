@@ -1,0 +1,233 @@
+:root {
+	/* Background and foreground */
+	--main-bg-color: #191919;
+	--main-fg-color: #f0f0f0;
+	--second-bg-color: #1f1f1f;
+	--second-fg-color: #e8e8e8;
+	--alt-bg-color: #111111;
+	--alt-fg-color: #e0e0e0;
+	--invert-bg-color: #f4f4f4;
+	--invert-fg-color: #111111;
+
+	--dark-gray: #6a6a6a;
+
+	/* Normal colors */
+	/* --green-color: #A0C980;
+	--blue-color: #5cb6eb;
+	--yellow-color: #fab2df;
+	--red-color: #fb4934;
+	--purple-color: #d3869b;
+	--aqua-color: #8ec07c;
+	--cyan-color: #5dbbc1;
+	--orange-color: #fe8019; */
+
+	--green-color: #97d39a;
+	--yellow-color: #ffdeaa;
+	--red-color: #ffafa5;
+	--blue-color: #a6cded;
+	--magenta-color: #f7b4e1;
+	--cyan-color: #86c1b9;
+	--orange-color: #f4bf75;
+	--crimson-color: #ed557d;
+	--ping-color: #eb6f92;
+
+	--color-primary: #93a0fc;
+	--color-danger: #ff7782;
+	--color-success: #41f1b6;
+	--color-warning: #ffbb55;
+
+	/* Shadow */
+	--box-shadow: 0 1rem 4rem rgba(50, 50, 50, 0.2);
+	--box-shadow-footer: 0 -1rem 4rem rgba(50, 50, 50, 0.2);
+
+	/* Transition */
+	--trans-05: all 0.5s ease-in-out;
+	--trans-03: all 0.3s ease-in-out;
+	--trans-01: all 0.2s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+*,
+*::before,
+*::after {
+	appearance: none;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	box-sizing: inherit;
+	outline: red;
+	border: none;
+	transition: var(trans-03);
+	font-family: 'Old Standard TT', sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+	animation: fade-in .9s forwards;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(90deg, var(--main-bg-color), var(--second-bg-color), var(--alt-bg-color));
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	transform: translate3d(0, 0, 0);
+	color: var(--main-fg-color);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+a {
+    display: inline-block;
+    color: var(--blue-color); /* Цвет обычной ссылки */
+    line-height: 1;
+    text-decoration: none; /* Убираем подчеркивание */
+    cursor: pointer;
+}
+
+a:after {
+    background-color: var(--blue-color); /* Цвет линии при наведении на нее курсора мыши */
+    display: block;
+    content: "";
+    height: 2px; /* Высота линии */
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+
+a:hover:after,
+a:focus:after {
+    width: 100%;
+}
+
+.bottom-text {
+	position: relative;
+	font-family: 'Old Standard TT', sans-serif;
+	text-align: center;
+	font-size: 22px;
+	top: 40%;
+	bottom: 0;
+}
+
+.introduction {
+	padding: 1rem;
+	height: 100vh;
+}
+
+h1.title {
+	font-size: 128px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 0.5;
+}
+
+h1.subtitle {
+	font-size: 54px;
+	text-align: center;
+	line-height: 0.5;
+	font-style: italic;
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 26px;
+}
+
+h4 {
+	font-size: 22px;
+}
+
+h5 {
+	font-size: 20px;
+}
+
+h6 {
+	font-size: 18px;
+}
+
+h2, h3, h4, h5, h6 {
+	font-family: 'Oranienbaum', sans-serif;
+}
+
+h2::before, h3::before, h4::before, h5::before, h6::before {
+	padding-left: 10px;
+	content: '# ';
+	color: var(--dark-gray)
+}
+
+.section-title {
+	color: var(--color-primary);
+}
+
+.section-title::before {
+	color: var(--color-primary);
+	opacity: 0.4;
+}
+
+p {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 16px;
+	padding: 20px;
+	padding-top: 0;
+	padding-left: 40px;
+}
+
+.small {
+	font-size: 14px;
+}
+
+.multi-line-fade {
+	height: 3lh;
+	overflow-y: hidden;
+	mask-image:
+		linear-gradient(black, black),
+		linear-gradient(to right, transparent 80%, black 90%);
+	mask-position:
+		0 0,
+		bottom right;
+	mask-size:
+		auto,
+		100% 1lh;
+	mask-repeat: no-repeat;
+	mask-composite: exclude;
+}
+
+.line-fade {
+	mask-image: linear-gradient(to right, black 80%, transparent 90%);
+}
+
+@media screen and (max-width: 600px) {
+	h1.title {
+		font-size: 50px;
+		line-height: 1;
+	}
+
+	h1.subtitle {
+		font-size: 28px;
+		line-height: 1;
+	}
+}

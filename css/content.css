@@ -1,0 +1,13 @@
+.contents-block {
+    margin: 20px;
+}
+
+.contents-list {
+    font-size: 18px;
+    margin: 10px;
+    border: 1px dashed var(--alt-fg-color);
+}
+
+.contents-list a {
+    padding-top: 5px;
+}
