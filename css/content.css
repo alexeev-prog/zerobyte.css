@@ -1,13 +1,143 @@
 .contents-block {
-    margin: 20px;
+	margin: 20px;
 }
 
 .contents-list {
-    font-size: 18px;
-    margin: 10px;
-    border: 1px dashed var(--alt-fg-color);
+	font-size: 18px;
+	margin: 10px;
+	border: 1px dashed var(--alt-fg-color);
 }
 
-.contents-list a {
-    padding-top: 5px;
+.contents-list h2 {
+	padding-left: 20px;
+}
+
+.sidebar {
+	height: 200px;
+	width: 150px;
+	position: -webkit-sticky; /* for Safari users */
+	position: sticky;
+	top: 0;
+	float: left;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+.sidebar ul {
+	padding: 0;
+	margin: 0;
+	padding-left: 40px;
+}
+
+.sidebar ul li {
+	list-style-type: lower-greek;
+	color: var(--lightgray);
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar a {
+	padding: 0;
+	margin: 0;
+	color: var(--lightgray);
+	transition: var(--trans-03);
+}
+
+.sidebar a.active {
+	color: var(--color-primary);
+	opacity: .7;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar a:hover {
+	color: var(--lightergrey);
+}
+
+.sidebar a:after {
+	background: none;
+}
+
+.sidebar li.active {
+	padding: 0;
+	margin: 0;
+	color: var(--color-primary);
+}
+
+.sidebar a.active {
+	color: var(--color-primary);
+	opacity: .8;
+}
+
+.sidebar a.active:hover {
+	opacity: 1;
+}
+
+.sidebar h3 {
+	padding: 0;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin: 0;
+	color: var(--lightgray);
+}
+
+.sidebar h4 {
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.content {
+	margin-left: 160px; /* Same as the width of the sidebar */
+	padding: 0px 10px;
+	text-indent: 30px;
+}
+
+code span {
+	font-family: 'JetBrains Mono', serif;
+}
+
+@media screen and (max-width: 600px) {
+	.content {
+		margin-left: 0;
+	}
+
+	.sidebar {
+		display: none;
+	}
+
+	.contents-list {
+		font-size: 16px;
+		margin: 5px;
+		border: 1px dashed var(--alt-fg-color);
+	}
+
+	.contents-list h2 {
+		padding: 0;
+		margin-top: 10px;
+	}
+
+	.sidebar ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	.contents-block {
+		padding: 0;
+		margin: 0;
+	}
+
+	.sidebar ul li {
+		list-style-type: lower-greek;
+		color: var(--lightgray);
+		padding: 0;
+		margin: 0;
+	}
 }
