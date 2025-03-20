@@ -42,10 +42,13 @@ base0F  #d65d0e  Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php 
 pre code.hljs {
   display: block;
   overflow-x: auto;
-  padding: 1em
+  padding: 1em;
+  padding-left: 5%;
+  margin: 5%;
+  border-radius: 5px;
 }
 code.hljs {
-  padding: 3px 5px
+  padding: 3px 5px;
 }
 .hljs {
   color: #d5c4a1;

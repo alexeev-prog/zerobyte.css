@@ -6,14 +6,25 @@ header {
 	height: 70px;
 	padding: 10px;
 	max-width: 100vw;
+	margin: 10px;
 	display: flex;
 	margin-bottom: 50px;
     align-items: center;
     justify-content: space-evenly;
+	position: sticky;
+	top: 10px;
+	transition: var(--trans-01);
+	backdrop-filter: blur(0);
+	border: transparent solid 1px;
+	z-index: 1001;
 }
 
 header h1 {
 	font-family: 'JetBrains Mono', monospace;
+}
+
+header a {
+	color: var(--main-fg-color);
 }
 
 .headermenu a {
@@ -46,9 +57,23 @@ header h1 {
     width: 100%;
 }
 
+header.scrolled {
+	background-color: rgba(20, 20, 20, 0.7);
+    border: 1px solid var(--gray);
+    backdrop-filter: blur(12px);
+	top: 10px;
+	margin: 10px;
+	border-radius: 10px;
+}
+
 @media screen and (max-width: 600px) {
+	header h1 {
+		padding: 0;
+		margin: 0;
+	}
+	
 	.headermenu {
-		display: none
+		display: none;
 	}
 
 	.headermenu a {

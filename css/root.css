@@ -1,8 +1,8 @@
 :root {
 	/* Background and foreground */
-	--main-bg-color: #1e1e1e;
+	--main-bg-color: #1a1a1a;
 	--main-fg-color: #f0f0f0;
-	--second-bg-color: #171717;
+	--second-bg-color: #141414;
 	--second-fg-color: #e8e8e8;
 	--alt-bg-color: #101010;
 	--alt-fg-color: #e0e0e0;
@@ -12,7 +12,8 @@
 	--dark-gray: #6a6a6a;
 	--lightgray: #606060;
 	--lightergrey: #a9a9a9;
-	--darkest-gray: #1f1f1f;
+	--darkest-gray: #1e1e1e;
+	--gray: #2f2f2f;
 
 	/* Normal colors */
 	/* --green-color: #A0C980;
@@ -69,6 +70,24 @@
 	border: none;
 	transition: var(trans-03);
 	font-family: 'Old Standard TT', sans-serif;
+	max-width: calc(100vw - 20px);
+}
+
+* {
+	scrollbar-width: thin;          /* "auto" или "thin"  */
+	scrollbar-color: var(--color-primary) var(--alt-bg-color);   /* плашка скролла и дорожка */ 
+}
+
+*::-webkit-scrollbar {
+	width: 6px;               /* ширина scrollbar */
+	height: 6px;
+}
+*::-webkit-scrollbar-track {
+	background: var(--alt-bg-color);        /* цвет дорожки */
+}
+*::-webkit-scrollbar-thumb {
+	background-color: var(--color-primary);    /* цвет плашки */
+	border-radius: 10px;       /* закругления плашки */
 }
 
 html {
@@ -258,7 +277,8 @@ p {
 	padding-right: 10px;
 	transition: var(--trans-03);
 	color: var(--color-primary);
-	font-family: 'Roboto Slab';
+	font-family: 'JetBrains Mono';
+	font-size: 20px;
 }
 
 .anchor:after {
