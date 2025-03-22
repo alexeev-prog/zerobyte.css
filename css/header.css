@@ -1,22 +1,21 @@
 header {
-	margin: 0;
 	overflow: hidden;
 	background: transparent;
 	font-family: 'IBM Plex Mono', monospace;
 	height: 70px;
 	padding: 10px;
 	max-width: 100vw;
-	margin: 10px;
 	display: flex;
 	margin-bottom: 50px;
     align-items: center;
     justify-content: space-evenly;
 	position: sticky;
-	top: 10px;
 	transition: var(--trans-01);
 	backdrop-filter: blur(0);
 	border: transparent solid 1px;
 	z-index: 1001;
+	top: 10px;
+	margin: 10px;
 }
 
 header h1 {
@@ -24,7 +23,22 @@ header h1 {
 }
 
 header a {
+	padding-bottom: 0;
 	color: var(--main-fg-color);
+	transition: var(--trans-03);
+}
+
+header a:hover {
+	color: var(--color-primary);
+}
+
+header a:after {
+    display: none;
+}
+
+header a:hover:after,
+header a:focus:after {
+    width: 0%;
 }
 
 .headermenu a {
@@ -58,13 +72,45 @@ header a {
 }
 
 header.scrolled {
-	background-color: rgba(20, 20, 20, 0.7);
+	background-color: var(--header-background);
     border: 1px solid var(--gray);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(6px);
 	top: 10px;
 	margin: 10px;
 	border-radius: 10px;
 }
+
+.burger__btn {
+	display: none;
+	flex-direction: column;
+	padding-bottom: 6px;
+	background: var(--invert-bg-color);
+	color: var(--invert-fg-color);
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+.burger__btn span {
+	width: 30px;
+	height: 2px;
+	border-radius: 3px;
+	margin-top: 6px;
+	background: var(--invert-fg-color);
+	transition: var(--trans-03);
+}
+
+.burger__btn.closed span:nth-last-child(1) {
+	transform: translateY(-8px) rotate(45deg);
+}
+
+.burger__btn.closed span:nth-last-child(2) {
+	opacity: 0;
+}
+
+.burger__btn.closed span:nth-last-child(3) {
+	transform: translateY(8px) rotate(-45deg);
+}
+	
 
 @media screen and (max-width: 600px) {
 	header h1 {
@@ -76,6 +122,7 @@ header.scrolled {
 		display: none;
 	}
 
+
 	.headermenu a {
 		font-size: 16px;
 	}
@@ -83,5 +130,9 @@ header.scrolled {
 	header h1 {
 		padding: 0;
 		margin: 0;
+	}
+	
+	.burger__btn {
+		display: flex
 	}
 }

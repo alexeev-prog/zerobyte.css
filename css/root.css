@@ -1,5 +1,85 @@
 :root {
-	/* Background and foreground */
+	/* Shadow */
+	--box-shadow: 0 1rem 4rem rgba(50, 50, 50, 0.2);
+	--box-shadow-footer: 0 -1rem 4rem rgba(50, 50, 50, 0.2);
+
+	/* Transition */
+	--trans-05: all 0.5s ease-in-out;
+	--trans-03: all 0.3s ease-in-out;
+	--trans-01: all 0.2s ease-in-out;
+}
+
+.catppuccin_colors {
+	--main-bg-color: #11111b;
+	--main-fg-color: #cdd6f4;
+	--second-bg-color: #181825;
+	--second-fg-color: #cdd6f4;
+	--alt-bg-color: #1e1e2e;
+	--alt-fg-color: #bac2de;
+	--invert-bg-color: #cdd6f4;
+	--invert-fg-color: #1e1e2e;
+
+	--header-background: rgba(17, 17, 27, 0.7);
+
+	--dark-gray: #585b70;
+	--lightgray: #7f849c;
+	--lightergrey: #9399b2;
+	--darkest-gray: #141421;
+	--gray: #2e2e3e;
+
+	--green-color: #a6e3a1;
+	--blue-color: #89b4fa;
+	--yellow-color: #f9e2af;
+	--red-color: #f38ba8;
+	--purple-color: #cba6f7;
+	--aqua-color: #94e2d5;
+	--cyan-color: #89dceb;
+	--orange-color: #fab387;
+	--crimson-color: #e7416e;
+	--pink-color: #f5c2e7;
+
+	--color-primary: #74c7ec;
+	--color-danger: #ff7782;
+	--color-success: #41f1b6;
+	--color-warning: #ffbb55;
+}
+
+.gruvbox_colors {
+	--header-background: rgba(18, 18, 18, 0.7);
+	--main-bg-color: #282828;
+	--main-fg-color: #ebdbb2;
+	--second-bg-color: #1d2021;
+	--second-fg-color: #fbf1fc;
+	--alt-bg-color: #141414;
+	--alt-fg-color: #f9f5d7;
+	--invert-bg-color: #ebdbb2;
+	--invert-fg-color: #282828;
+
+	--dark-gray: #504945;
+	--lightgray: #7c6f64;
+	--lightergrey: #a89984;
+	--darkest-gray: #1e1e1f;
+	--gray: #2f2f2f;
+
+	--green-color: #A0C980;
+	--blue-color: #5cb6eb;
+	--yellow-color: #fab2df;
+	--red-color: #fb4934;
+	--purple-color: #d3869b;
+	--aqua-color: #8ec07c;
+	--cyan-color: #5dbbc1;
+	--orange-color: #fe8019;
+	--crimson-color: #ed557d;
+	--pink-color: #eb6f92;
+
+	--color-primary: #8ec07c;
+	--color-danger: #ff7782;
+	--color-success: #41f1b6;
+	--color-warning: #ffbb55;
+}
+
+.carbon_colors {
+	--header-background: rgba(20, 20, 20, 0.7);
 	--main-bg-color: #1a1a1a;
 	--main-fg-color: #f0f0f0;
 	--second-bg-color: #141414;
@@ -14,17 +94,7 @@
 	--lightergrey: #a9a9a9;
 	--darkest-gray: #1e1e1e;
 	--gray: #2f2f2f;
-
-	/* Normal colors */
-	/* --green-color: #A0C980;
-	--blue-color: #5cb6eb;
-	--yellow-color: #fab2df;
-	--red-color: #fb4934;
-	--purple-color: #d3869b;
-	--aqua-color: #8ec07c;
-	--cyan-color: #5dbbc1;
-	--orange-color: #fe8019; */
-
+	
 	--green-color: #97d39a;
 	--yellow-color: #ffdeaa;
 	--red-color: #ffafa5;
@@ -33,21 +103,12 @@
 	--cyan-color: #86c1b9;
 	--orange-color: #f4bf75;
 	--crimson-color: #ed557d;
-	--ping-color: #eb6f92;
+	--pink-color: #eb6f92;
 
 	--color-primary: #93a0fc;
 	--color-danger: #ff7782;
 	--color-success: #41f1b6;
 	--color-warning: #ffbb55;
-
-	/* Shadow */
-	--box-shadow: 0 1rem 4rem rgba(50, 50, 50, 0.2);
-	--box-shadow-footer: 0 -1rem 4rem rgba(50, 50, 50, 0.2);
-
-	/* Transition */
-	--trans-05: all 0.5s ease-in-out;
-	--trans-03: all 0.3s ease-in-out;
-	--trans-01: all 0.2s ease-in-out;
 }
 
 @keyframes fade-in {
@@ -73,16 +134,17 @@
 	max-width: calc(100vw - 20px);
 }
 
-* {
-	scrollbar-width: thin;          /* "auto" или "thin"  */
-	scrollbar-color: var(--color-primary) var(--alt-bg-color);   /* плашка скролла и дорожка */ 
-}
+/* * {
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-primary) var(--alt-bg-color);   
+} */
 
 *::-webkit-scrollbar {
 	width: 6px;               /* ширина scrollbar */
 	height: 6px;
 }
 *::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px var(--gray);
 	background: var(--alt-bg-color);        /* цвет дорожки */
 }
 *::-webkit-scrollbar-thumb {

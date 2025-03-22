@@ -4,16 +4,32 @@ window.addEventListener('scroll',
 const scrollIndicatorElt =
 document.getElementById('scrollIndicator');
 
-const maxHeight =
-window.document.body.scrollHeight
-- window.innerHeight;
+function getScrollPercentage() {
+
+	/*
+		
+		scrollTop - прокрученное расстояние от начала страницы до верхнего края окна браузера
+		windowHeight - высота окна браузера
+		documentHeight - высота страницы
+		
+	*/
+    
+	let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	let windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+	let documentHeight = Math.max(
+		document.body.scrollHeight, document.body.offsetHeight, document.body.clientHeight,
+		document.documentElement.scrollHeight, document.documentElement.offsetHeight, document.documentElement.clientHeight
+	);
+  
+	return ((scrollTop / (documentHeight - windowHeight)) * 100);
+
+}
 
 function moveScrollIndicator(e) {
-const percentage = 
-    ((window.scrollY) / maxHeight) * 100;
+    const percentage = getScrollPercentage();
 
-scrollIndicatorElt.style.width
-    = percentage + '%';
+    scrollIndicatorElt.style.width
+        = percentage + '%';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -49,4 +65,12 @@ window.addEventListener('scroll', () => {
     } else {
         header.classList.remove('scrolled');
     }
-});
+});4
+
+const burger = document.querySelector(".burger__btn");
+const menu = document.querySelector(".sidebar");
+
+burger.onclick = function() {
+	burger.classList.toggle("closed");
+	menu.classList.toggle("opened");
+};
